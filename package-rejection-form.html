@@ -1,0 +1,94 @@
+<html>
+   <head>
+       <title>packing regaction-entry</title>
+	    <link rel="stylesheet" href="style.css">
+
+	   <script src="https://code.jquery.com/jquery-3.4.1.js" 
+	   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+	   </script>
+
+<script>
+	function SubForm (){
+		$.ajax({
+			url:'https://api.apispreadsheets.com/data/GqJW9OqpUOCKzyqp/',
+			type:'post',
+			data:$("#myForm").serializeArray(),
+			success: function(){
+			  alert("Form Data Submitted :)")
+			},
+			error: function(){
+			  alert("There was an error :(")
+			}
+		});
+	}
+	</script>
+
+   </head>
+   <body>
+   <form id="myForm" class="form"><b>
+	
+         <h2> Package Rejection Entry </h2>
+		 <br>
+		 <br>
+		 <span> Hiii Guy this time demo project for working with API : for code visit https://github.com/swapniltake1  and search for repo name  </span>   
+	 
+	     <label>Date:</label>
+		 <input type = "date" name="Date" max="2022"> 
+		 
+		 <label>Recipt-date</label>
+		 <input type = "date" name="Recipt-date">
+		 
+		 <label for="appt">Choose-Time:</label>
+		 <input type="time" id="appt" name="Time"  required><br>
+		 </br>
+	
+		<label for="shift">Shift</label>
+		<br>
+        <select id="shift" name="Shift">
+		
+             <option value="A-shift">A-shift</option>
+             <option value="B-shift">B-shift</option>
+
+        </select><br>
+		
+		</br>
+		
+		<label for="Waight" >Waight</label>
+		<br>
+		<select id="Waight" name="Waight">
+		     <option value="1-kg">1-kg</option>
+             <option value="2-kg">2-kg</option>
+			 <option value="5-kg">5-kg</option>
+             <option value="10-kg">10-kg</option>
+		      
+		</select><br>
+		</br>
+		
+		 
+		<label>vendor</label>
+		<br>
+		<input type="text" name="Vendor"><br>
+		</br>
+		
+		<label>Supplier Bill-No</label>
+		<br>
+		<input type="text" name="Supplier Bill-No"><br>
+		</br>
+		
+		<label>Material Code</label>
+		<br>
+		<input type="text" name="Material Code"><br>
+		</br>
+		
+		
+	     <label> Reason of Rejection </label> 
+		 <br>
+		<input type="text" required name="Reason">
+		<br>
+		</br>
+		</b>
+	</form>	
+	<button onclick="SubForm()" type="submit" name="Submit" class="form" id="btn"> Submit </button>
+
+   </body>
+</html>
